@@ -3,13 +3,10 @@ export interface IArticleData {
   status: string
   title: string
   abstractContent: string
-  fullContent: string
-  sourceURL: string
   imageURL: string
   timestamp: string | number
-  platforms: string[]
+  label: string[]
   disableComment: boolean
-  importance: number
   author: string
   reviewer: string
   type: string
