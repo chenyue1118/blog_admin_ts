@@ -55,3 +55,17 @@ Javascript version:
 [PanJiaChen/vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) (full features supported vue admin)
 
 [PanJiaChen/electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin) (a vue electron admin project)
+
+```
+    server {
+      listen       6002;
+      server_name  blog_local;
+      location ^~/apis/ {
+        proxy_pass http://127.0.0.1:6601/;
+        # proxy_pass http://182.61.175.203:6601/;
+      }
+      location / {
+        proxy_pass http://127.0.0.1:6001;
+      }
+    }
+```
