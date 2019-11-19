@@ -50,6 +50,35 @@ export default new Router({
         }
       ]
     },
+    /*
+    *
+    */
+    {
+      path: '/article',
+      component: Layout,
+      meta: {
+        title: '文章管理',
+        icon: 'example'
+      },
+      children: [
+        {
+          path: 'list',
+          component: () => import(/* webpackChunkName: "tree" */ '@/views/article/list.vue'),
+          meta: {
+            title: '文章列表',
+            icon: 'example'
+          }
+        },
+        {
+          path: 'add',
+          component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
+          meta: {
+            title: '文章添加',
+            icon: 'example'
+          }
+        }
+      ]
+    },
     {
       path: '/example',
       component: Layout,
@@ -66,15 +95,15 @@ export default new Router({
             title: 'Tree',
             icon: 'tree'
           }
-        },
-        {
-          path: 'table',
-          component: () => import(/* webpackChunkName: "table" */ '@/views/table/index.vue'),
-          meta: {
-            title: 'Table',
-            icon: 'table'
-          }
         }
+        // {
+        //   path: 'table',
+        //   component: () => import(/* webpackChunkName: "table" */ '@/views/table/index.vue'),
+        //   meta: {
+        //     title: 'Table',
+        //     icon: 'table'
+        //   }
+        // }
       ]
     },
     {

@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="app-container">
     <el-table
       v-loading="listLoading"
@@ -69,7 +69,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { getArticles } from '@/api/articles'
+import { getArticles } from '@/api/article'
 import { IArticleData } from '@/api/types'
 
 @Component({
@@ -110,4 +110,4 @@ export default class extends Vue {
     }, 0.5 * 1000)
   }
 }
-</script>
+</script> -->
