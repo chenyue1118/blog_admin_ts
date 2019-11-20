@@ -9,7 +9,7 @@
           <div class="card-panel-text">
             New Visits
           </div>
-          100
+          {{ num1 }}
           <!-- <count-to :start-val="0" :end-val="102400" :duration="2600" class="card-panel-num" /> -->
         </div>
       </div>
@@ -23,6 +23,7 @@
           <div class="card-panel-text">
             Messages
           </div>
+          {{ num2 }}
           <!-- <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" /> -->
         </div>
       </div>
@@ -36,6 +37,7 @@
           <div class="card-panel-text">
             Purchases
           </div>
+          {{ num3 }}
           <!-- <count-to :start-val="0" :end-val="9280" :duration="3200" class="card-panel-num" /> -->
         </div>
       </div>
@@ -49,6 +51,7 @@
           <div class="card-panel-text">
             Shoppings
           </div>
+          {{ num4 }}
           <!-- <count-to :start-val="0" :end-val="13600" :duration="3600" class="card-panel-num" /> -->
         </div>
       </div>
@@ -61,7 +64,12 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'PanelGroup'
 })
-export default class extends Vue {}
+export default class extends Vue {
+  private num1: number = 100
+  private num2: number = 1000
+  private num3: number = 1200
+  private num4: number = 23
+}
 </script>
 
 <style lang="scss" scoped>
