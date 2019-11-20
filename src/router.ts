@@ -51,14 +51,15 @@ export default new Router({
       ]
     },
     /*
-    *
+    *  article
+    *    |-- list
     */
     {
       path: '/article',
       component: Layout,
       meta: {
         title: '文章管理',
-        icon: 'example'
+        icon: 'article'
       },
       children: [
         {
@@ -66,7 +67,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "tree" */ '@/views/article/list.vue'),
           meta: {
             title: '文章列表',
-            icon: 'example'
+            icon: 'articlelist'
           }
         },
         {

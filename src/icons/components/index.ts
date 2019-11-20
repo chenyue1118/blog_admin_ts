@@ -1,4 +1,6 @@
 /* tslint:disable */
+import './article'
+import './articlelist'
 import './dashboard'
 import './example'
 import './eye-off'
