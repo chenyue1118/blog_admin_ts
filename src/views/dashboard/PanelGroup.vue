@@ -9,7 +9,7 @@
           <div class="card-panel-text">
             New Visits
           </div>
-          {{ num1 }}
+          <count-to :end="num1" />
           <!-- <count-to :start-val="0" :end-val="102400" :duration="2600" class="card-panel-num" /> -->
         </div>
       </div>
@@ -23,7 +23,7 @@
           <div class="card-panel-text">
             Messages
           </div>
-          {{ num2 }}
+          <count-to :end="num2" />
           <!-- <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" /> -->
         </div>
       </div>
@@ -37,7 +37,7 @@
           <div class="card-panel-text">
             Purchases
           </div>
-          {{ num3 }}
+          <count-to :end="num3" />
           <!-- <count-to :start-val="0" :end-val="9280" :duration="3200" class="card-panel-num" /> -->
         </div>
       </div>
@@ -51,7 +51,7 @@
           <div class="card-panel-text">
             Shoppings
           </div>
-          {{ num4 }}
+          <count-to :end="num4" />
           <!-- <count-to :start-val="0" :end-val="13600" :duration="3600" class="card-panel-num" /> -->
         </div>
       </div>
@@ -60,15 +60,29 @@
 </template>
 
 <script lang="ts">
+import CountTo from './count/to.vue'
 import { Component, Vue } from 'vue-property-decorator'
+
 @Component({
-  name: 'PanelGroup'
+  name: 'PanelGroup',
+  components: {
+    CountTo
+  }
 })
 export default class extends Vue {
-  private num1: number = 100
-  private num2: number = 1000
-  private num3: number = 1200
-  private num4: number = 23
+  num1: number = 0
+  num2: number = 0
+  num3: number = 0
+  num4: number = 0
+
+  mounted() {
+    setTimeout(() => {
+      this.num1 = 100
+      this.num2 = 200
+      this.num3 = 1200
+      this.num4 = 90
+    }, 1000)
+  }
 }
 </script>
 
