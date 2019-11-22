@@ -4,18 +4,21 @@
       name:{{ name }}
     </div>
     <panel-group />
+    <line-chart />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import PanelGroup from './PanelGroup.vue'
+import LineChart from './LineChart.vue'
 import { UserModule } from '@/store/modules/user'
 
 @Component({
   name: 'Dashboard',
   components: {
-    'panel-group': PanelGroup
+    PanelGroup,
+    LineChart
   }
 })
 export default class extends Vue {

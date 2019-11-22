@@ -130,6 +130,7 @@ export default class extends Vue {
     mounted() {
       const endVal: number = this.end
       this.counter = new (CountUp as any)(
+      // this.counter = new (CountUp as CountUp)(
         this.counterId,
         this.startVal,
         endVal,
