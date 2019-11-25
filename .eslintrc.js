@@ -29,6 +29,8 @@ module.exports = {
     'vue/match-component-file-name': 'off',
     'vue/object-curly-spacing': 'off',
     'vue/max-attributes-per-line': 'off',
+    'vue/attributes-order': 'off',
+    'vue/html-self-closing': 'off',
     'linebreak-style': [0, 'error', 'windows']
   },
   'extends': [

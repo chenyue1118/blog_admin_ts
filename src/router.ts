@@ -61,6 +61,7 @@ export default new Router({
         title: '文章管理',
         icon: 'article'
       },
+      redirect: '/article/list',
       children: [
         {
           path: 'list',
@@ -72,10 +73,10 @@ export default new Router({
         },
         {
           path: 'add',
-          component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
+          component: () => import(/* webpackChunkName: "tree" */ '@/views/article/add.vue'),
           meta: {
             title: '文章添加',
-            icon: 'example'
+            icon: 'articlelist'
           }
         }
       ]
