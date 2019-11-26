@@ -23,7 +23,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { getArticleList } from '@/api/article'
 import { IArticleAdd } from '@/api/types'
-import MarkdownEditor from '@/components/MarkdownEditor/index.vue'
+import MarkdownEditor from '@/components/MarkdowmEditor/index.vue'
 
 const defaultAdd: IArticleAdd = {
   title: '',
