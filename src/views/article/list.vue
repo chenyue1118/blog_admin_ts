@@ -53,10 +53,10 @@
       />
       <el-table-column
         prop="status"
-        label="状态"
+        label="状态(完成/更新)"
       >
         <template slot-scope="scope">
-          {{ scope.row.status === 'done' ? '完成' : '更新中' }}
+          {{ scope.row.status === 'done' ? '已完成' : '更新中' }}
         </template>
       </el-table-column>
     </el-table>
