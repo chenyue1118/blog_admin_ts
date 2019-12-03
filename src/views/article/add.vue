@@ -11,16 +11,21 @@
           height="300px"
         />
       </el-form-item>
-      <!-- <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
-      </el-form-item> -->
+      <el-form-item>
+        <el-button type="primary" @click="submitForm('addForm')">
+          立即创建
+        </el-button>
+        <el-button @click="resetForm('addForm')">
+          重置
+        </el-button>
+      </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { Form } from 'element-ui'
 import { getArticleList } from '@/api/article'
 import { IArticleAdd } from '@/api/types'
 import MarkdownEditor from '@/components/MarkdowmEditor/index.vue'
@@ -28,6 +33,10 @@ import MarkdownEditor from '@/components/MarkdowmEditor/index.vue'
 const defaultAdd: IArticleAdd = {
   title: '',
   contentHTML: ''
+}
+
+export interface addRules {
+  title: any
 }
 
 @Component({
@@ -38,16 +47,39 @@ const defaultAdd: IArticleAdd = {
 })
 export default class extends Vue {
   private addFrom = Object.assign({}, defaultAdd)
-  private rules: any[] = []
+  private rules: addRules = {
+    title: [
+      { required: true, message: '请输入标题', trigger: 'blur' }
+    ]
+  }
 
   created() {
     console.log(new Date())
   }
+
+  public submitForm(form: string) {
+    (this.$refs[form] as Form).validate((valid: boolean) => {
+      if (valid) {
+        console.log(this.addFrom)
+      }
+    })
+  }
+
+  public resetForm(form: string) {
+    (this.$refs[form] as Form).resetFields()
+  }
 }
 </script>
 
-<style lang="scss" scoped>
-.article-list {
-  padding: 20px;
+<style lang="scss">
+.article-add {
+  width: 80%;
+  padding-top: 40px;
+  margin: 0 auto;
+  .te-mode-switch-section {
+    .te-switch-button {
+      vertical-align: top;
+    }
+  }
 }
 </style>

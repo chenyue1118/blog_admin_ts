@@ -22,8 +22,8 @@ export default class extends Vue {
   @Prop({ default: 'markdown' }) private mode!: string
   @Prop({ default: '300px' }) private height!: string
   // https://github.com/nhnent/tui.editor/tree/master/src/js/langs
-  // @Prop({ default: 'en_US' }) private language!: string
-  @Prop({ default: 'zh_CN' }) private language!: string
+  @Prop({ default: 'en_US' }) private language!: string
+  // @Prop({ default: 'zh_CN' }) private language!: string
 
   private markdownEditor?: tuiEditor.Editor
 
