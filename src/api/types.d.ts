@@ -16,6 +16,7 @@ export interface IArticleData {
 export interface IArticleAdd {
   title: string
   contentHTML: string
+  contentVal: string
   // abstractContent: string
   // imageURL: string
   // timestamp: string | number

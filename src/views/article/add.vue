@@ -4,12 +4,14 @@
       <el-form-item label="标题" prop="title">
         <el-input v-model="addFrom.title"></el-input>
       </el-form-item>
-      <el-form-item label="内容" prop="contentHTML">
+      <el-form-item label="内容" prop="contentVal">
         <markdown-editor
           ref="markdownEditor"
-          v-model="addFrom.contentHTML"
+          v-model="addFrom.contentVal"
           height="300px"
+          @sethtml="sethtml"
         />
+        <!-- @sethtml="sethtml" -->
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm('addForm')">
@@ -32,6 +34,7 @@ import MarkdownEditor from '@/components/MarkdowmEditor/index.vue'
 
 const defaultAdd: IArticleAdd = {
   title: '',
+  contentVal: '',
   contentHTML: ''
 }
 
@@ -67,6 +70,10 @@ export default class extends Vue {
 
   public resetForm(form: string) {
     (this.$refs[form] as Form).resetFields()
+  }
+
+  sethtml(val: string) {
+    this.addFrom.contentHTML = val
   }
 }
 </script>
