@@ -31,6 +31,7 @@ module.exports = {
     'vue/max-attributes-per-line': 'off',
     'vue/attributes-order': 'off',
     'vue/html-self-closing': 'off',
+    'object-curly-spacing': 'off',
     'linebreak-style': [0, 'error', 'windows']
   },
   'extends': [
