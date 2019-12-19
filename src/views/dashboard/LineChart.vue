@@ -1,10 +1,12 @@
 <template lang="html">
   <div
     :class="className"
-    :style="{height: height, width: width}"></div>
+    :style="{height: height, width: width}"
+  ></div>
 </template>
 
 <script lang="ts">
+import echarts from 'echarts'
 import { Component, Vue, Prop } from 'vue-property-decorator'
 
 export interface ILineChartData {
