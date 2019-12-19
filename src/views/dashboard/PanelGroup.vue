@@ -7,9 +7,9 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            New Visits
+            文章数
           </div>
-          <count-to :end="num1" />
+          <count-to :end="articleNumber" />
           <!-- <count-to :start-val="0" :end-val="102400" :duration="2600" class="card-panel-num" /> -->
         </div>
       </div>
@@ -21,9 +21,9 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            Messages
+            问答数
           </div>
-          <count-to :end="num2" />
+          <count-to :end="questionNumber" />
           <!-- <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" /> -->
         </div>
       </div>
@@ -35,9 +35,9 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            Purchases
+            评论数
           </div>
-          <count-to :end="num3" />
+          <count-to :end="commentNumber" />
           <!-- <count-to :start-val="0" :end-val="9280" :duration="3200" class="card-panel-num" /> -->
         </div>
       </div>
@@ -49,19 +49,18 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            Shoppings
+            访问量
           </div>
-          <count-to :end="num4" />
+          <count-to :end="trafficVolume" />
           <!-- <count-to :start-val="0" :end-val="13600" :duration="3600" class="card-panel-num" /> -->
         </div>
       </div>
     </el-col>
   </el-row>
 </template>
-
 <script lang="ts">
 import CountTo from './count/to.vue'
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component({
   name: 'PanelGroup',
@@ -70,19 +69,10 @@ import { Component, Vue } from 'vue-property-decorator'
   }
 })
 export default class extends Vue {
-  num1: number = 0
-  num2: number = 0
-  num3: number = 0
-  num4: number = 0
-
-  mounted() {
-    setTimeout(() => {
-      this.num1 = 100
-      this.num2 = 200
-      this.num3 = 1200
-      this.num4 = 90
-    }, 1000)
-  }
+  @Prop({default: 0}) private articleNumber!: number
+  @Prop({default: 0}) private questionNumber!: number
+  @Prop({default: 0}) private commentNumber!: number
+  @Prop({default: 0}) private trafficVolume!: number
 }
 </script>
 
