@@ -8,7 +8,7 @@
         <el-input v-model="addFrom.abstractContent"></el-input>
       </el-form-item>
       <el-form-item label="标签" prop="label">
-        <el-select v-model="addFrom.label" placeholder="请选择">
+        <el-select v-model="addFrom.label" multiple placeholder="请选择">
           <el-option v-for="item in labelList" :key="item" :value="item" :label="item"></el-option>
         </el-select>
       </el-form-item>
@@ -113,7 +113,8 @@ export default class extends Vue {
     this.loading = true
     addArticle(data).then(res => {
       this.loading = false
-      this.$message.success(res.message)
+      // this.$message.success(res.message)
+      this.$message.success('创建成功')
     })
   }
 
