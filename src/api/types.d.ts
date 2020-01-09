@@ -17,13 +17,13 @@ export interface IArticleAdd {
   title: string
   contentHTML: string
   contentVal: string
-  // abstractContent: string
+  abstractContent: string
   // imageURL: string
   // timestamp: string | number
-  // label: string[]
+  label: string[]
   // disableComment: boolean
   // author: string
   // reviewer: string
-  // type: string
+  type: string
   // pageviews: number
 }

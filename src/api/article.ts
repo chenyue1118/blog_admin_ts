@@ -7,3 +7,11 @@ export const getArticleList = (params: any) =>
     method: 'get',
     params
   })
+
+// 文章添加
+export const addArticle = (data: any) =>
+  request({
+    url: `${baseUrl}/article/add`,
+    method: 'post',
+    data
+  })
